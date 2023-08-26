@@ -13,8 +13,10 @@ void imprimirMatriz(double **matriz, int f, int c) {
 
 void normalizarF(double *fila, int c) {
     double leadingCoefficient = fila[0];
-    for (int i = 0; i < c; ++i) {
-        fila[i] /= leadingCoefficient;
+    if (leadingCoefficient != 0) {
+        for (int i = 0; i < c; ++i) {
+            fila[i] /= leadingCoefficient;
+        }
     }
 }
 
@@ -62,6 +64,36 @@ void reducedRowEchelonForm(double **matriz, int f, int c) {
     }
 }
 
+void mostrarPivotes(double **matriz, int f, int c) {
+    cout << "Pivotes en la matriz original:" << endl;
+    for (int r = 0; r < f; ++r) {
+        int pivotColumn = -1;
+        for (int col = 0; col < c; ++col) {
+            if (matriz[r][col] != 0) {
+                pivotColumn = col;
+                break;
+            }
+        }
+        if (pivotColumn != -1) {
+            cout << "Fila " << r + 1 << ", Columna " << pivotColumn + 1 << endl;
+        }
+    }
+
+    cout << "Pivotes en la matriz reducida:" << endl;
+    for (int r = 0; r < f; ++r) {
+        int pivotColumn = -1;
+        for (int col = 0; col < c; ++col) {
+            if (matriz[r][col] != 0) {
+                pivotColumn = col;
+                break;
+            }
+        }
+        if (pivotColumn != -1) {
+            cout << "Fila " << r + 1 << ", Columna " << pivotColumn + 1 << endl;
+        }
+    }
+}
+
 bool validacionEntrada(int a);
 
 int main() {
@@ -90,16 +122,17 @@ int main() {
         }
     }
 
+
     system("cls");
 
     cout << "MATRIZ ORIGINAL" << endl << endl;
     imprimirMatriz(matrizMain, f, c);
-
     reducedRowEchelonForm(matrizMain, f, c);
 
     cout << "\nMATRIZ REDUCIDA" << endl << endl;
     imprimirMatriz(matrizMain, f, c);
-
+    cout << endl;
+	mostrarPivotes(matrizMain, f, c);
     for (int i = 0; i < f; ++i) {
         delete[] matrizMain[i];
     }
