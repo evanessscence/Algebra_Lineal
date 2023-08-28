@@ -5,14 +5,17 @@ using namespace std;
 int main()
 {
   int tam;
+  int filas;
   
-  cout << "> Ingrese el tamaÃ±o de los vectores: "; cin >> tam;
+  cout << "> Ingrese el tamaño del vector: "; cin >> tam;
+  cout << "> Ingrese el número de filas de la matriz: "; cin >> filas;
   
   float vector1[tam];
   float vector2[tam];
+  float matriz[filas][tam];
   float vectorMultiplicado[tam];
   
-  cout << "\n> Ingrese los valores del primer vector: " << endl;
+  cout << "\n> Ingrese los valores del vector: " << endl;
   
   for (int a=0;a<tam;a++)
   {
@@ -21,20 +24,40 @@ int main()
     cout << endl;
    }
    
-   cout << "> Ingrese los valores del segundo vector: " << endl;
-  for (int b=0;b<tam;b++)
+   cout << "> Ingrese los valores de la matriz: " << endl;
+  for (int b=0;b<filas;b++)
   {
-    cout << "(" << b <<", 0): ";
-    cin >> vector2[b];
+    for (int c=0;c<tam;c++)
+    {
+    cout << "(" << b <<", "<< c << "): ";
+    cin >> matriz[b][c];
     cout << endl;
+	}
    }
+
+	for (int p=0;p<filas;p++)
+	{
+	for (int s=0;s<tam;s++)
+	{
+		cout <<matriz[p][s]<<"	";
+	}
+	cout << endl;
+	}
+	
+	for (int p=0;p<filas;p++)
+	{
+	for (int s=0;s<tam-1;s++)
+	{
+		cout << vector1[p] << " x " << matriz[p][s] << " = " << vector1[p]*matriz[p][s] << "		";
+		cout << vector1[p] << " x " << matriz[p+1][s] << " = " << vector1[p]*matriz[p+1][s] << "		" << endl;
+		cout << vector1[p+1] << " x " << matriz[p][s+1] << " = " << vector1[p]*matriz[p+1][s] << "		";
+		cout << vector1[p+1] << " x " << matriz[p+1][s+1] << " = " << vector1[p]*matriz[p+1][s+1] << "		" << endl;
+		vectorMultiplicado[s] = vector1[p]*matriz[p][s] + vector1[p]*matriz[p+1][s];
+	}	
+	cout << endl;
+	}
    
-  for (int c=0;c<tam;c++)
-  {
-    vectorMultiplicado[c] = vector1[c]*vector2[c];
-   }
-   
-   cout << "> Vector multiplicado: " << endl;
+   cout << endl << "> Vector multiplicado: " << endl;
    cout << "<";
    
    for (int d=0;d<tam;d++)
