@@ -83,7 +83,7 @@ void sumarMatriz()
 {
 
   cout << "> Ingrese el número de filas de la matriz: "; cin >> filas;
-	cout << "> Ingrese el número de columnas de la matriz: "; cin >> tam;
+cout << "> Ingrese el número de columnas de la matriz: "; cin >> tam;
   
   float MatrizSuma[filas][tam];
   float matriz[filas][tam];
@@ -123,6 +123,44 @@ void sumarMatriz()
    } }
 }
 
+void transpuestaMatriz()
+{
+	cout << "> Ingrese el número de filas de la matriz: "; cin >> filas;
+	cout << "> Ingrese el número de columnas de la matriz: "; cin >> tam;
+	float matriz[filas][tam];
+	cout << "> Ingrese los valores de la matriz: " << endl;
+  for (int b=0;b<filas;b++)
+  {
+    for (int c=0;c<tam;c++)
+    {
+    cout << "(" << b <<", "<< c << "): ";
+    cin >> matriz[b][c];
+    cout << endl;
+	}
+   }
+	
+	cout << "> MATRIZ INGRESADA" << endl;
+	for (int p=0;p<filas;p++)
+	{
+	for (int s=0;s<tam;s++)
+	{
+		cout <<matriz[p][s]<<"	";
+	}
+	cout << "\n\n";
+	}
+	  
+   cout << "> MATRIZ TRANSPUESTA: " << endl;
+   
+   for (int d=0;d<filas;d++)
+  {
+  	for (int m=0; m<tam; m++)
+  	{
+  	cout << matriz[m][d] << "	";
+  	
+	  }
+	cout << endl;
+   }
+}
 
 void multiplicarVector()
 {
@@ -170,7 +208,7 @@ int main()
   SetConsoleOutputCP(CP_UTF8);
 	int op;
 	cout << "< C A L C U L A D O R A  D E  M A T R I C E S >" << endl << endl;
-	cout << "> 1. Multiplicar una matriz con un vector\n> 2. Sumar matrices\n> 3. Multiplicar vectores\n\n> ";
+	cout << "> 1. Multiplicar una matriz con un vector\n> 2. Sumar matrices\n> 3. Multiplicar vectores\n> 4. Matrix transpuesta\n\n> ";
 	cin >> op;
 	
 	switch(op)
@@ -184,6 +222,10 @@ int main()
 			sumarMatriz();
 			break;
 		case 3:
+			system("cls");
+			multiplicarVector();
+			break;
+		case 4:
 			system("cls");
 			multiplicarVector();
 			break;
