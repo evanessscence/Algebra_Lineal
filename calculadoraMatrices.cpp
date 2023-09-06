@@ -52,12 +52,12 @@ void multiplicarMatrizVector()
 	{
 		cout << vector1[p] << " x " << matriz[s][p] << " = " << vector1[p]*matriz[s][p] << "		";
 		vectorMultiplicado[p][s] = vector1[p]*matriz[s][p];
-		MatrizSuma[p] += vectorMultiplicado[p][s];
+		MatrizSuma[p] += vectorMultiplicado[s][p];
 	}	
 	cout << "\n\n";
 	}
    
-   cout << "> Matriz multiplicada: " << endl;
+   cout << "> PASO 2: " << endl;
    
    for (int d=0;d<filas;d++)
   {
@@ -69,7 +69,7 @@ void multiplicarMatrizVector()
 	cout << endl;
    }
    
-    cout << "\n> Matriz multiplicada sumada: " << endl;
+    cout << "\n> RESULTADO: " << endl;
    
    for (int d=0;d<filas;d++)
   {
