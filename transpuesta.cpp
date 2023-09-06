@@ -7,8 +7,9 @@ int filas, tam;
 
 void transpuestaMatriz()
 {
-	cout << "> Ingrese el nÃºmero de filas de la matriz: "; cin >> filas;
-	cout << "> Ingrese el nÃºmero de columnas de la matriz: "; cin >> tam;
+	SetConsoleOutputCP(CP_UTF8);
+	cout << "> Ingrese el número de filas de la matriz: "; cin >> filas;
+	cout << "> Ingrese el número de columnas de la matriz: "; cin >> tam;
 	float matriz[filas][tam];
 	cout << "> Ingrese los valores de la matriz: " << endl;
   for (int b=0;b<filas;b++)
@@ -31,7 +32,7 @@ void transpuestaMatriz()
 	cout << "\n\n";
 	}
 	  
-   cout << "> MATRIZ TRANSPUESA: " << endl;
+   cout << "> MATRIZ TRANSPUESTA: " << endl;
    
    for (int d=0;d<filas;d++)
   {
@@ -46,6 +47,7 @@ void transpuestaMatriz()
 
 int main()
 {
+
 	transpuestaMatriz();
 	return 0;
 }
