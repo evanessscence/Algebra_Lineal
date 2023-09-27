@@ -53,7 +53,6 @@ void pantallaInicio()
 
 int main() {
 	
-	pantallaInicio();
     int fils, cols;
     cout << "Ingrese el número de filas: ";
     cin >> fils;
@@ -109,7 +108,21 @@ int main() {
             }
            
         }
+        
+        cout << "\nDeterminante: ";
+		
+		int det = 0;
+		
+		for(int i=0;i<fils-1;++i) 
+		{
+			for (int j=0;j<cols-1
+			;++j)
+			{
+			det = matrix[i][j] * matrix[i+1][j+1];
+			}
+		}
 
+		cout << det;
         // Manejo de la última columna
         if ((abs(matrix[i][cols - 1]) > epsilon) and (allZero)) { // Si todas las entradas son 0 y la última columna es mayor a 0, entonces
         cout << "\nEl sistema es inconsistente." << endl;  // es una ariable sin solución
