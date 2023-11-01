@@ -5,7 +5,7 @@
 #include <string>
 
 using namespace std;
-
+// FALTA LEER LA FUNCION DESDE EL ARCHIVO Y LA GUI
 float E;
 
 double funcion(double x) {
@@ -24,7 +24,7 @@ void biseccion(double a, double b) {
 	cout << "a		" << "	b			" << "f(a)			" << "f(b)			" << "c		" << "f(c)\n\n";
 	
     if (funcion(a) * funcion(b) >= 0) {
-        cout << "No puedes usar el método de bisección\n";
+        cout << "No puedes usar el mÃ©todo de bisecciÃ³n\n";
         return;
     }
 
@@ -38,10 +38,10 @@ void biseccion(double a, double b) {
     	
         // Encuentra el punto medio
         c = (a+b)/2;
-        // Verifica si el punto medio es la raíz
+        // Verifica si el punto medio es la raÃ­z
         if (funcion(c) == 0.0)
         {
-        	cout << "El punto medio no es la raíz (" << funcion(c) << ")" << endl;
+        	cout << "El punto medio no es la raÃ­z (" << funcion(c) << ")" << endl;
         	break;
 		}        
 		
@@ -51,7 +51,7 @@ void biseccion(double a, double b) {
         else
             a = c;
     }
-    cout << "\nLa raíz es: " << c;
+    cout << "\nLa raÃ­z es: " << c;
 }
 
 int main() {
@@ -64,7 +64,7 @@ int main() {
     cin>>a;
     cout<<"Ingrese el valor de [b]: ";
     cin>>b;
-    cout<<"Defina la precisión requerida E: ";
+    cout<<"Defina la precisiÃ³n requerida E: ";
     cin>>E;
     */
     
