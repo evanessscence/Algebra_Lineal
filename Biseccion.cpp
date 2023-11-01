@@ -5,43 +5,45 @@
 #include <string>
 
 using namespace std;
-// FALTA LEER LA FUNCION DESDE EL ARCHIVO Y LA GUI
+
 float E;
 
 double funcion(double x) {
-	
+	// Falta leer la funcion desde el archivo
 /*	ifstream funcion("funcion.txt");
 	double func;
 	funcion >> func;
 	cout << func;
     return func;*/
-    return x*x*x*x-5*x*x*x+0.5*x*x-11*x+10;
+    return x*x*x-2*x*x-4*x+8;
     
 }
 
 void biseccion(double a, double b) {
 	
-	cout << "a		" << "	b			" << "f(a)			" << "f(b)			" << "c		" << "f(c)\n\n";
+	cout << "i		"<<"a		" << "	b			" << "f(a)			" << "f(b)			" << "c		" << "f(c)\n\n";
 	
     if (funcion(a) * funcion(b) >= 0) {
-        cout << "No puedes usar el mÃ©todo de bisecciÃ³n\n";
+        cout << "No puedes usar el método de bisección\n";
         return;
     }
 
     double c = a;
+    int convergencia;
+    
 	ofstream file("tabla.txt");
+	
     while ((b-a) >= E) {
-    	
-    	cout << a << " |		" << b << " |		" << funcion(a) << " |		" << funcion(b) << " |	" << c << " |		" << funcion(c) << endl;
-    	file << a << "," << b << "," << funcion(a) << "," << funcion(b) << "," << c << "," << funcion(c) << endl;
+    	convergencia++;
+    	cout << convergencia << "	" << a << " |		" << b << " |		" << funcion(a) << " |		" << funcion(b) << " |	" << c << " |	" << funcion(c) << endl;
+    	file <<  convergencia << "," << a << "," << b << "," << funcion(a) << "," << funcion(b) << "," << c << "," << funcion(c) << endl;
 		
-    	
         // Encuentra el punto medio
         c = (a+b)/2;
-        // Verifica si el punto medio es la raÃ­z
+        // Verifica si el punto medio es la raíz
         if (funcion(c) == 0.0)
         {
-        	cout << "El punto medio no es la raÃ­z (" << funcion(c) << ")" << endl;
+        	cout << "El punto medio no es la raíz (" << funcion(c) << ")" << endl;
         	break;
 		}        
 		
@@ -51,7 +53,9 @@ void biseccion(double a, double b) {
         else
             a = c;
     }
-    cout << "\nLa raÃ­z es: " << c;
+    
+    cout << "\n> La raíz es: " << c;
+    cout << "\n> El método converge a " << convergencia << " iteraciones.";
 }
 
 int main() {
@@ -64,15 +68,14 @@ int main() {
     cin>>a;
     cout<<"Ingrese el valor de [b]: ";
     cin>>b;
-    cout<<"Defina la precisiÃ³n requerida E: ";
+    cout<<"Defina la precisión requerida E: ";
     cin>>E;
     */
     
-    a = 0.55;
-    b= 1.1;
+    a = -2.5;
+    b= -1.5;
     E = 0.0001;
     biseccion(a, b);
-    
     
     return 0;
 }
