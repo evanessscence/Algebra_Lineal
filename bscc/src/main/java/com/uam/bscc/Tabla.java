@@ -30,7 +30,7 @@ public class Tabla extends javax.swing.JPanel {
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
 
         // Ruta al archivo "solucion.txt"
-        String rutaArchivo = "C:\\Users\\a n n a\\Documents\\NetBeansProjects\\bscc\\tabla.txt";
+        String rutaArchivo = "C:\\Users\\labc112\\Downloads\\Algebra_Lineal-main\\bscc\\tabla.txt";
 
         try (BufferedReader br = new BufferedReader(new FileReader(rutaArchivo))) {
             String linea;
