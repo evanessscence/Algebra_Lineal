@@ -145,7 +145,7 @@ public class Inicio extends javax.swing.JPanel {
         Archivos.guardarArchivo(aArch,"a.txt");
         Archivos.guardarArchivo(bArch,"b.txt");
         Archivos.guardarArchivo(eArch,"e.txt");
-        Archivos.ejecutarArchivo("C:\\Users\\a n n a\\Documents\\NetBeansProjects\\bscc\\Biseccion.exe");
+        Archivos.ejecutarArchivo("C:\\Users\\labc112\\Downloads\\Algebra_Lineal-main\\bscc\\Biseccion.exe");
       try {
     Thread.sleep(1000); // 5000 milisegundos (5 segundos)
 } catch (InterruptedException e) {
