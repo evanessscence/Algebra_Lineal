@@ -64,14 +64,12 @@ int main() {
         return 1;
     }
 
-    printf("Ingrese la función (por ejemplo, 'x^2 - 3*x + 1'): ");
+    printf("Ingrese la función: ");
     
     char funciona[100];
     scanf("%99[^\n]", funciona);  // Leer la función hasta encontrar un salto de línea o llegar al límite del array
 
     fprintf(archivo, "%s", funciona);
-
-    printf("Función guardada correctamente en 'funcion.txt'.\n");
 
     fclose(archivo);
     
